@@ -9,6 +9,7 @@ public class Goal : MonoBehaviour {
        if(other.gameObject.CompareTag("Player_Tag"))
        {
            Debug.Log("You have reached the goal!");
-       }
+           SceneManager.LoadScene("Winner_Screen");
+        }
     }
 }
