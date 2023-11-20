@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MenuNavigator : MonoBehaviour
 {
+    public void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadScene("Level_Select");
