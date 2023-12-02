@@ -1143,11 +1143,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8779392702767236718, guid: 1bf1de3052a2a419aae8e7288c25856e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000021483564
+      value: 0.0000000021483564
       objectReference: {fileID: 0}
     - target: {fileID: 8779392702767236718, guid: 1bf1de3052a2a419aae8e7288c25856e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1.02446746e-10
+      value: -1.02446746e-10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1274,7 +1274,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 971773863}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.04763198, y: -0.0000000021483566, z: 1.02446746e-10, w: 0.99886495}
+  m_LocalRotation: {x: 0.04763198, y: 0.0000000021483566, z: -1.02446746e-10, w: 0.99886495}
   m_LocalPosition: {x: 0, y: 3, z: -7}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1853,6 +1853,14 @@ PrefabInstance:
     - target: {fileID: 885737291931951202, guid: 53c56be3c2e58435b80b4dbac6011c07, type: 3}
       propertyPath: m_Name
       value: Player_3rd_Person
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723632066177898209, guid: 53c56be3c2e58435b80b4dbac6011c07, type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723632066177898209, guid: 53c56be3c2e58435b80b4dbac6011c07, type: 3}
+      propertyPath: sprintSpeed
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4835115091993246485, guid: 53c56be3c2e58435b80b4dbac6011c07, type: 3}
       propertyPath: m_LocalPosition.x
