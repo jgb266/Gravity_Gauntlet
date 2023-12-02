@@ -59,13 +59,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.CompareTag("jump_boost"))
         {
-            ApplyJumpBoost(2);
-            // Optionally, you can disable or destroy the jump_boost GameObject here
+            ApplyJumpBoost(1.5f);
             other.gameObject.SetActive(false);
         }
     }
 
-    public void ApplyJumpBoost(int multiplier)
+    public void ApplyJumpBoost(float multiplier)
     {
         jumpForce *= multiplier;
     }
