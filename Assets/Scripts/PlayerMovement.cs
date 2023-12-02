@@ -2,9 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Created in reference from an online tutorial
-//https://www.youtube.com/watch?v=UCwwn2q4Vys&ab_channel=Dave%2FGameDevelopment
-
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
@@ -19,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
-    public KeyCode sprintKey = KeyCode.LeftShift;
 
     [Header("Ground Check")]
     public float playerHeight;
@@ -59,12 +55,25 @@ public class PlayerMovement : MonoBehaviour
         MovePlayer();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("jump_boost"))
+        {
+            ApplyJumpBoost(1.5f);
+            other.gameObject.SetActive(false);
+        }
+    }
+
+    public void ApplyJumpBoost(float multiplier)
+    {
+        jumpForce *= multiplier;
+    }
     private void MyInput()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        //Jumping
+        // when to jump
         if(Input.GetKey(jumpKey) && readyToJump && grounded)
         {
             readyToJump = false;
@@ -72,16 +81,6 @@ public class PlayerMovement : MonoBehaviour
             Jump();
 
             Invoke(nameof(ResetJump), jumpCooldown);
-        }
-
-        //Walking/Running 
-        if(Input.GetKey(sprintKey))
-        {
-            moveSpeed = sprintSpeed;
-        }
-        else
-        {
-            moveSpeed = walkSpeed;
         }
     }
 
