@@ -59,6 +59,20 @@ public class PlayerMovement : MonoBehaviour
         MovePlayer();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("jump_boost"))
+        {
+            ApplyJumpBoost(1.5f);
+            other.gameObject.SetActive(false);
+        }
+    }
+
+    public void ApplyJumpBoost(float multiplier)
+    {
+        jumpForce *= multiplier;
+    }
+
     private void MyInput()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
